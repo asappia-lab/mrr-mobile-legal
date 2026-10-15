@@ -4,33 +4,44 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Create a Mining Rig Rentals API key</title>
+  <style>
+    body { font-family: Georgia, serif; line-height: 1.45; color: #101418; margin: 0; }
+    main { max-width: 40rem; margin: 0 auto; padding: 1.5rem; }
+    img { max-width: 100%; height: auto; border: 1px solid #E3E5E7; border-radius: 8px; }
+    a { color: #101418; }
+  </style>
 </head>
 <body>
   <main>
     <h1>Create an API key and secret</h1>
-    <p>MRR Mobile reads a Mining Rig Rentals account with an API key and secret that you create on their site. Paste that pair into the app. It is saved in the device secure store (the iOS Keychain or Android Keystore). The app developer never receives it.</p>
+    <p>MRR Mobile uses a Mining Rig Rentals account with an API key and secret that you create on their site. Paste that pair into the app. It is saved in the device secure store (the iOS Keychain or Android Keystore). The app developer never receives it.</p>
 
     <h2>1. Open API keys</h2>
     <p>Sign in at <a href="https://www.miningrigrentals.com?ref=2624229">Mining Rig Rentals</a>. If you do not have an account yet, <a href="https://www.miningrigrentals.com/register?ref=2624229">register</a> first. Creating an account is free.</p>
-    <p>Open <a href="https://www.miningrigrentals.com/account/apikey?ref=2624229">API Key Management</a>. From a signed-in account, open your username in the top bar, then <strong>API Keys</strong>.</p>
+    <p>Open <a href="https://www.miningrigrentals.com/account/apikey?ref=2624229">API Key Management</a>. The page title is API Key Management. The same page is also under your username in the top bar, then API Keys.</p>
+    <p>Press the green <strong>Add A Key</strong> button.</p>
+    <img src="api-key-1-add.png" alt="API Key Management. A red outline marks the green Add A Key button.">
 
-    <h2>2. Add a key</h2>
-    <ol>
-      <li>Press <strong>Add A Key</strong>. The window title is <strong>Add New API Key</strong>. It does not ask for a name.</li>
-      <li>Each permission is <strong>Write</strong>, <strong>Read</strong>, or <strong>None</strong>. A new key starts on None.</li>
-      <li>Set <strong>Rigs</strong> to <strong>Write</strong>. That row is rig details and rig management.</li>
-      <li>Set <strong>Rentals</strong> to <strong>Write</strong>. That row is rental browsing and rental actions.</li>
-      <li>Leave <strong>Balance / Withdraw</strong> on <strong>None</strong>. That is the withdraw permission, and MRR Mobile leaves it off. Write on that row can request payouts.</li>
-      <li>Press <strong>Save</strong>.</li>
-    </ol>
+    <h2>2. Set every permission to Write</h2>
+    <p>The window title is <strong>Add New API Key</strong>. It does not ask for a name. Each row starts on <strong>None</strong>. The choices are <strong>Write</strong>, <strong>Read</strong>, and <strong>None</strong>.</p>
+    <p>Click <strong>Write</strong> on all three rows, then press <strong>Save</strong>:</p>
+    <ul>
+      <li><strong>Balance / Withdraw</strong> — account balances, deposits, and withdrawals</li>
+      <li><strong>Rentals</strong> — rental browsing and rental actions</li>
+      <li><strong>Rigs</strong> — rig details and rig management</li>
+    </ul>
+    <p>Write on every row lets MRR Mobile use the account completely, including payouts.</p>
+    <img src="api-key-2-permissions.png" alt="Add New API Key window. Red outlines mark Write on Balance / Withdraw, Rentals, and Rigs, and the Save button.">
 
     <h2>3. Copy the key and the secret</h2>
-    <p>After you save, the page keeps the new key beside <strong>Key:</strong> and the secret beside <strong>Secret:</strong>. Both stay in the list. Copy both. In MRR Mobile, open Add account and paste them into API key and API secret.</p>
-    <p>Treat the secret like a password. Do not email it, post it, or put it in a shared note. If you delete the key, or the secret is no longer listed, create a new key and paste the new pair into the app. A deleted key stops working immediately.</p>
+    <p>After you save, the new row stays in the list. Copy the value next to <strong>Key:</strong> and the value next to <strong>Secret:</strong>. Both stay on the page. The secret is not shown only once.</p>
+    <p>In MRR Mobile, open Add account and paste them into API key and API secret.</p>
+    <img src="api-key-3-saved.png" alt="The new API key row. Key and Secret stay in the list. The values are covered.">
+    <p>Treat the secret like a password. Do not email it, post it, or put it in a shared note. If you delete the key, create a new one and paste the new pair into the app. A deleted key stops working immediately.</p>
+    <p>On a key you already created, set the same three rows to <strong>Write</strong> and press <strong>Save Permissions</strong>.</p>
 
-    <h2>What the app can see</h2>
-    <p>With Rigs and Rentals set to Write, and Balance / Withdraw left on None, the app can show and update rigs and rentals. The key cannot request a payout while that row stays on None. Each request goes from your phone to Mining Rig Rentals. Signing uses the secret on the device.</p>
-    <p>On a key you already created, use the same settings and press <strong>Save Permissions</strong>.</p>
+    <h2>What the app can do</h2>
+    <p>With Write on Balance / Withdraw, Rentals, and Rigs, the app can show and update balances, rigs, rentals, pool profiles, and transactions, and it can request a payout. Each request goes from your phone to Mining Rig Rentals. Signing uses the secret on the device.</p>
     <p>Endpoint details are in the <a href="https://www.miningrigrentals.com/apidocv2?ref=2624229">API v2 documentation</a>. Mining Rig Rentals also publishes its own <a href="https://www.miningrigrentals.com/privacy?ref=2624229">privacy policy</a> and <a href="https://www.miningrigrentals.com/tos?ref=2624229">terms of service</a>.</p>
 
     <p><a href="privacy.html">Privacy policy</a> · <a href="support.html">Support</a></p>
